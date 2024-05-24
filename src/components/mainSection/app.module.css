@@ -1,0 +1,21 @@
+.race,
+.dh {
+  object-fit: cover;
+  width: 1000px;
+  z-index: 1;
+  height: 600px;
+}
+.dh {
+  transform: scaleX(-1);
+}
+
+.dh:hover,
+.race:hover {
+  animation: own 1s forwards;
+}
+
+@keyframes own {
+  100% {
+    opacity: 0.7;
+  }
+}
