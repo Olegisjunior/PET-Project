@@ -1,8 +1,11 @@
-export default function Button(onClick, children, hoverUnd) {
+export default function Button({ onClick, children, hoverUnd, tailwind }) {
   return (
     <button
-      key={children}
-      className={hoverUnd ? `hover:underline` : ``}
+      className={
+        hoverUnd
+          ? `hover:underline focus:outline-none hover:pointer ${tailwind}`
+          : `hover:pointer focus:outline-none ${tailwind}`
+      }
       onClick={onClick}
     >
       {children}
