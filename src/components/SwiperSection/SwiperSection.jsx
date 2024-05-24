@@ -9,6 +9,7 @@ import { Scrollbar, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/scrollbar";
+import Button from "../interface/Buttons/Button";
 
 export const SwiperSection = () => {
   return (
@@ -26,57 +27,57 @@ export const SwiperSection = () => {
         autoHeight={true}
       >
         <SwiperSlide className="relative">
-          <button className="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[535px] top-[283px] hover:text-[#fff] hover:pointer">
+          <Button tailwind="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[535px] top-[283px] hover:text-[#fff] hover:pointer">
             MTB
-          </button>
-          <button className="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[500px] top-[420px] hover:text-[#fff] hover:pointer">
+          </Button>
+          <Button tailwind="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[500px] top-[420px] hover:text-[#fff] hover:pointer">
             description
-          </button>
+          </Button>
           <img src={mtb} alt="" className="w-full" />
         </SwiperSlide>
         <SwiperSlide>
-          <button className="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[535px] top-[283px] hover:text-[#fff] hover:pointer">
+          <Button tailwind="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[535px] top-[283px] hover:text-[#fff] hover:pointer">
             ROAD
-          </button>
-          <button className="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[535px] top-[420px] hover:text-[#fff] hover:pointer">
+          </Button>
+          <Button tailwind="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[535px] top-[420px] hover:text-[#fff] hover:pointer">
             description
-          </button>
+          </Button>
           <img src={road} alt="" className="w-full" />
         </SwiperSlide>
         <SwiperSlide>
-          <button className="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[480px] top-[283px] hover:text-[#fff] hover:pointer">
+          <Button tailwind="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[480px] top-[283px] hover:text-[#fff] hover:pointer">
             URBAN
-          </button>
-          <button className="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[535px] top-[420px] hover:text-[#fff] hover:pointer">
+          </Button>
+          <Button tailwind="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[535px] top-[420px] hover:text-[#fff] hover:pointer">
             description
-          </button>
+          </Button>
           <img src={urban} alt="" className="w-full" />
         </SwiperSlide>
         <SwiperSlide>
-          <button className="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[500px] top-[283px] hover:text-[#fff] hover:pointer">
+          <Button tailwind="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[500px] top-[283px] hover:text-[#fff] hover:pointer">
             E-BIKE
-          </button>
-          <button className="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[535px] top-[420px] hover:text-[#fff] hover:pointer">
+          </Button>
+          <Button tailwind="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[535px] top-[420px] hover:text-[#fff] hover:pointer">
             description
-          </button>
+          </Button>
           <img src={ebike} alt="" className="w-full" />
         </SwiperSlide>
         <SwiperSlide>
-          <button className="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[535px] top-[283px] hover:text-[#fff] hover:pointer">
+          <Button tailwind="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[535px] top-[283px] hover:text-[#fff] hover:pointer">
             KIDS
-          </button>
-          <button className="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[500px] top-[420px] hover:text-[#fff] hover:pointer">
+          </Button>
+          <Button tailwind="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[500px] top-[420px] hover:text-[#fff] hover:pointer">
             description
-          </button>
+          </Button>
           <img src={kids} alt="" className="w-full" />
         </SwiperSlide>
         <SwiperSlide>
-          <button className="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[325px] top-[283px] hover:text-[#fff] hover:pointer">
+          <Button tailwind="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[325px] top-[283px] hover:text-[#fff] hover:pointer">
             EQUIPMENT
-          </button>
-          <button className="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[500px] top-[420px] hover:text-[#fff] hover:pointer">
+          </Button>
+          <Button tailwind="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[500px] top-[420px] hover:text-[#fff] hover:pointer">
             description
-          </button>
+          </Button>
           <img src={accessories} alt="" className="w-full" />
         </SwiperSlide>
       </Swiper>
