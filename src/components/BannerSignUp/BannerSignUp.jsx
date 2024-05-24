@@ -1,3 +1,6 @@
+import Button from "../interface/Buttons/Button";
+import Input from "../interface/Inputs/Input";
+
 export const BannerSignUp = () => {
   return (
     <>
@@ -8,14 +11,18 @@ export const BannerSignUp = () => {
             Get special offers, exclusive product news, and event info straight
             to your inbox.
           </p>
-          <input
-            className="w-[480px] p-2 text-[1.5rem] focus:outline-none h-[2.5rem] text-center rounded-[35px]"
-            type="text"
-            placeholder="abc@gmail.com"
+
+          <Input
+            placeholder={"abc@gmail.com"}
+            tailwind={"w-[480px] p-2 text-[1.5rem] h-[2.5rem] text-center "}
           />
-          <button className="text-white hover:underline focus:outline-none hover:pointer w-[300px] text-[2rem] h-[3rem]">
+
+          <Button
+            hoverUnd={true}
+            tailwind="text-white  w-[300px] bg-[#3e3e3e] rounded-[35px] text-[2rem] h-[3rem]"
+          >
             send
-          </button>
+          </Button>
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import Logo from "../ui/Logo.svg";
 import Heart from "../ui/heart.png";
+import Button from "../interface/Buttons/Button";
 
 export const Header = () => {
   return (
@@ -10,44 +11,44 @@ export const Header = () => {
       </div>
       <div className="nav-items justify-around font-s`semibold text-white flex gap-5 ">
         <div>
-          <a href="">Home</a>
+          <Button hoverUnd={true}>Home</Button>
         </div>
         <div>
-          <a href="">Mountain</a>
+          <Button hoverUnd={true}>Mountain</Button>
         </div>
         <div>
-          <a href="">Road</a>
+          <Button hoverUnd={true}>Road</Button>
         </div>
         <div>
-          <a href="">City</a>
+          <Button hoverUnd={true}>City</Button>
         </div>
         <div>
-          <a href="">Electic</a>
+          <Button hoverUnd={true}>Electic</Button>
         </div>
         <div>
-          <a href="">Kids</a>
+          <Button hoverUnd={true}>Kids</Button>
         </div>
         <div>
-          <a href="">Accessories</a>
+          <Button hoverUnd={true}>Accessories</Button>
         </div>
         <div>
-          <a href="">About us</a>
+          <Button hoverUnd={true}>About us</Button>
         </div>
       </div>
       <div className="nav-end font-semibold text-white flex gap-3">
         <div>
-          <a href="">Sign in</a>
+          <Button hoverUnd={true}>Sign in</Button>
         </div>
         <div>
-          <a href="">Sign up</a>
+          <Button hoverUnd={true}>Sign up</Button>
         </div>
         <div>
-          <a href="">
+          <Button>
             <img className="h-[20px] " src={Heart} alt="liked" />
-          </a>
+          </Button>
         </div>
         <div>
-          <a href="">Cart</a>
+          <Button hoverUnd={true}>Cart</Button>
         </div>
       </div>
     </header>
