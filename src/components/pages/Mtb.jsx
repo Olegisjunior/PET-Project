@@ -4,14 +4,13 @@ import { Header } from "../Header/Header";
 import { ItemList } from "../itemList/ItemList";
 import { bikes } from "../../bikes";
 import bannerMTB from "../ui/image1400w.jpeg";
+import Button from "../interface/Buttons/Button";
 
 export default function Mtb() {
-  // const { product, setProduct } = useState();
-
   return (
     <>
       <Header />
-      <div className="main w-full h-screen ">
+      <div className="main h-fit">
         <div className="title w-full h-[250px] relative">
           <h1 className="font-[800] text-[4rem] text-white absolute left-[35%] top-[20%]">
             Moutain bikes
@@ -22,30 +21,32 @@ export default function Mtb() {
             alt=""
           />
         </div>
-        <div className="flex ">
-          <aside className="aside w-[15%] h-[1000px] bg-gray-200"></aside>
-          <ItemList bikes={bikes} />
-
-          {/* <div className="gr w-[85%] h-[1000px] bg-red-800 grid gap-4 grid-cols-3 grid-rows-3 pl-10 pt-10">
-            <div className="w-[325px] h-[200px] bg-yellow-600">2</div>
-            <div className="w-[325px] h-[200px] bg-yellow-700">3</div>
-            <div className="w-[325px] h-[200px] bg-purple-500">4</div>
-            <div className="w-[325px] h-[200px] bg-purple-600">5</div>
-            <div className="w-[325px] h-[200px] bg-purple-700">7</div>
-            <div className="w-[325px] h-[200px] bg-blue-500">8</div>
-            <div className="w-[325px] h-[200px] bg-blue-600">6</div>
-            <div className="w-[325px] h-[200px] bg-blue-700">9</div>
-          </div> */}
-        </div>
       </div>
-      <div className="pt-[500px]">
-        <FooterSection />
+      <div className="sort bg-gray-200 w-[100%] flex flex-row justify-center items-center gap-12">
+        <Button hoverUnd={true}>sort by alhabeth</Button>
+        <Button hoverUnd={true}>sort by price</Button>
+        <Button hoverUnd={true}>sort by ..</Button>
+      </div>
+      <div className="flex flex-col justify-between">
+        <div className="flex pb-[5rem]">
+          <aside className="aside w-[15%] h-fit bg-gray-200 flex flex-col">
+            <Button>filters</Button>
+            <Button>filters</Button>
+            <Button>filters</Button>
+          </aside>
+
+          <ItemList bikes={bikes} />
+        </div>
+
+        <div className="mt-[5rem]">
+          <FooterSection />
+        </div>
       </div>
     </>
   );
 }
 
-// json with img & price & name, title, grid's, card item,
+// json with img & price & name, title, grid's, card item, резиновий грід
 // sort on top, pagination, filters for grid's
 // skeleton when loading
 // item Page, with description, photos, buy button, how to pick sizes s/m/l/xl

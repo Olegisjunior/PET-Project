@@ -4,18 +4,19 @@ export const ItemList = (props) => {
   const { bikes } = props;
 
   return (
-    <div className="gr w-[85%] h-[1000px] grid gap-17 gap-y-20 grid-cols-3 grid-rows-3 pl-10 pt-10 ">
-      {bikes.map((item) => {
-        return (
-          <Items
-            name={item.name}
-            key={item.name}
-            price={item.price}
-            img={item.img}
-            merida={item.merida}
-          />
-        );
-      })}
-    </div>
+    <>
+      <div className="grid w-[85%] my-0 mx-auto pl-[2.5rem] pt-[2.5rem] gap-x-[3rem] gap-y-[8rem] max-w-[1620px] grid-cols-[repeat(auto-fill,_325px)] ">
+        {bikes.map((item) => {
+          return (
+            <Items
+              name={item.name}
+              key={item.id}
+              price={item.price}
+              img={item.img}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
