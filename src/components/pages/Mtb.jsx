@@ -48,7 +48,7 @@ export default function Mtb() {
 
       setProduct(response.data.items);
       let len = response.data.meta.total_items;
-      console.log(len);
+
       setDataAxios({ ItemsLengthAxios: len, ItemsPerPageAxios: perPage });
     } catch (e) {
       console.error(e.message);
