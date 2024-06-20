@@ -48,7 +48,7 @@ export default function Mtb() {
 
       setProduct(response.data.items);
       let len = response.data.meta.total_items;
-      console.log(len);
+
       setDataAxios({ ItemsLengthAxios: len, ItemsPerPageAxios: perPage });
     } catch (e) {
       console.error(e.message);
@@ -108,7 +108,7 @@ export default function Mtb() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="main h-fit">
         <div className="title w-full h-[250px] relative">
           <h1 className="font-[800] text-[4rem] text-white absolute left-[35%] top-[20%]">
@@ -139,16 +139,17 @@ export default function Mtb() {
 
           {!isLoading ? <ItemList bikes={product} /> : null}
         </div>
-        {
+
+        <div className="p-10">
           <Pagination
             items={dataAxios}
             handlePagination={handlePagination}
           ></Pagination>
-        }
-
-        <div className="mt-[5rem]">
-          <FooterSection />
         </div>
+
+        {/* <div className="mt-[5rem]">
+          <FooterSection />
+        </div> */}
       </div>
     </>
     // json with img & price & name, title, grid's, card item, резиновий грід
@@ -158,11 +159,5 @@ export default function Mtb() {
     // transport free data base or partner db
 
     ////////////////////////////////////////////////////////////////////////////////////////////
-
-    // Item Page with description photos buy button how to pick sizes s/m/l/xl,
-    // feature favorite <3 to cart favorite
-    // New filters(year, size), rate for sort rate,
-    // На карточках показувати які є кольори і мб їх міняти зразу ж в сторінці з всіма велами
-    // IDK чи треба, воно нічого не оптимузовує, upload photos to web service, not for local db
   );
 }

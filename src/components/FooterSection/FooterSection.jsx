@@ -1,4 +1,5 @@
 import Button from "../interface/Buttons/Button";
+import { Link } from "react-router-dom";
 
 export const FooterSection = () => {
   return (
@@ -9,31 +10,126 @@ export const FooterSection = () => {
         <div className="pt-10 bg-[#1e1e1e] flex content-center pl-16 justify-around items-start pb-10">
           <div className="first flex justify-center items-center flex-col text-[#dadddb]">
             <h1 className="text-[1.25rem] text-[#ffffff]">SHOP</h1>
-            <Button hoverUnd={true}>Mountain bikes</Button>
-            <Button hoverUnd={true}>Road bikes</Button>
-            <Button hoverUnd={true}>Electra bikes</Button>
-            <Button hoverUnd={true}>Hybrid bikes</Button>
-            <Button hoverUnd={true}>Men's bikes</Button>
-            <Button hoverUnd={true}>Women's bikes</Button>
-            <Button hoverUnd={true}>Equipment</Button>
-            <Button hoverUnd={true}>Clothing</Button>
-            <Button hoverUnd={true}>Cloth</Button>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to="/Mountainbikes"
+            >
+              Mountain bikes
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Road bikes
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Electra bikes
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Hybrid bikes
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Men's bikes
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Women's bikes
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Equipment
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Clothing
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Cloth
+            </Link>
           </div>
           <div className="second flex justify-center items-center flex-col text-[#dadddb]">
             <h1 className="text-[1.25rem] text-[#ffffff]">ABOUT US</h1>
-            <Button hoverUnd={true}>Our history</Button>
-            <Button hoverUnd={true}>our missions</Button>
-            <Button hoverUnd={true}>our principles</Button>
-            <Button hoverUnd={true}>Technology</Button>
-            <Button hoverUnd={true}>Stores</Button>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Our history
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              our missions
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              our principles
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Technology
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Stores
+            </Link>
           </div>
           <div className="third flex justify-center items-center flex-col text-[#dadddb]">
             <h1 className="text-[1.25rem] text-[#ffffff]">SUPPORT</h1>
-            <Button hoverUnd={true}>Contact us</Button>
-            <Button hoverUnd={true}>Product support</Button>
-            <Button hoverUnd={true}>Bike registration</Button>
-            <Button hoverUnd={true}>Bike archive</Button>
-            <Button hoverUnd={true}>Manuals & user guides</Button>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Contact us
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Product support
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Bike registration
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Bike archive
+            </Link>
+            <Link
+              className="hover:underline focus:outline-none hover:pointer"
+              to=""
+            >
+              Manuals & user guides
+            </Link>
           </div>
         </div>
 

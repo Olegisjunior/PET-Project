@@ -11,7 +11,7 @@ export const Pagination = ({ items, handlePagination }) => {
 
   return (
     <div className="mt-[5rem]">
-      <div className="Pagination flex justify-center items-center gap-10">
+      <div className="Pagination flex justify-center items-center gap-10 text-[1.2rem]">
         {PagItems.map((pageNumber) => {
           return (
             <Button
@@ -27,4 +27,5 @@ export const Pagination = ({ items, handlePagination }) => {
     </div>
   );
 };
+
 export default Pagination;
