@@ -2,6 +2,7 @@ import racebike from "../ui/race-1140w.jpg";
 import downhill from "../ui/image2-1400w.jpeg";
 import classes from "./app.module.css";
 import Button from "../interface/Buttons/Button";
+import { Link } from "react-router-dom";
 
 export const Main = () => {
   return (
@@ -9,13 +10,17 @@ export const Main = () => {
       <div className="first">
         <div className="bg-black">
           <Button tailwind="flex absolute font-bold text-[3rem] left-[22%] top-[30%] justify-center bg-none items-center z-50">
-            MTB
+            <Link to="/Mountainbikes" className="font-bold text-[3rem]">
+              MTB
+            </Link>
           </Button>
 
           <Button tailwind="flex absolute font-bold text-[1rem] left-[10%] top-[40%] justify-center bg-none items-center z-50">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            <br />
-            Corporis, totam. Accusamus qui veniam soluta dolorem!
+            <Link to="/Mountainbikes" className="font-bold text-[1rem]">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              <br />
+              Corporis, totam. Accusamus qui veniam soluta dolorem!
+            </Link>
           </Button>
 
           <div className="dh relative">

@@ -1,7 +1,7 @@
 import Button from "../interface/Buttons/Button";
 
 export const Items = (props) => {
-  const { name, img, price, id } = props;
+  const { name, img, price } = props;
 
   return (
     <div className="w-[325px] h-[200px] hover:shadow-[0_60px_30px_rgb(0,0,0,0.15)]">
