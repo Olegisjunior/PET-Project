@@ -2,16 +2,21 @@ import Logo from "../ui/Logo.svg";
 import Heart from "../ui/heart.png";
 import Button from "../interface/Buttons/Button";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import close from "../ui/closeImg.png";
-export const Header = ({ favorites, onRemoveToFavorites }) => {
+import { FavoritesContext } from "../pages/App/";
+import { ColorContext } from "../pages/App/";
+
+export const Header = () => {
   const [selected, setSelected] = useState(false);
+  const [heartRender, setHeartRender] = useState(false);
+  const { favorites, toggleFavorite } = useContext(FavoritesContext);
+  const { bikeColor } = useContext(ColorContext);
 
   const DataForModal = () => {
     setSelected(!selected);
   };
 
-  console.log(`favorites header: ${favorites}`);
   return (
     <header className="bg-[#1E1E1E] w-full h-[60px] flex justify-around items-center ">
       <div className="logo">
@@ -79,23 +84,35 @@ export const Header = ({ favorites, onRemoveToFavorites }) => {
             </div>
           ) : (
             favorites.map((item) => {
-              // Переробити на боковий елемент, як бургер меню тільки бокове
               return (
-                <div className="">
-                  <div
-                    key={item.id}
-                    className="flex gap-10 justify-center items-center"
-                  >
-                    <img className="h-[120px]" src={item.img}></img>
+                <div
+                  key={item.id}
+                  className="flex gap-10 justify-center items-center"
+                >
+                  <img
+                    className="h-[120px]"
+                    src={
+                      item.colors.length <= 1 && !bikeColor
+                        ? item.galimg
+                          ? item.galimg[0]
+                          : item.img
+                        : bikeColor === item.colors[0]
+                        ? item.galimg[0]
+                        : item.galimg2[0]
+                    }
+                  ></img>
+                  <Link to="">
                     <h1 className="font-bold">{item.name}</h1>
-                    <h1 className="semi-bold">{item.price}$</h1>
-                    <Button
-                      key={item.id}
-                      onClick={() => onRemoveToFavorites(item)}
-                    >
-                      <img className="h-[20px]" src={close} />
-                    </Button>
-                  </div>
+                  </Link>
+                  <h1 className="semi-bold">{item.price}$</h1>
+                  <Button
+                    key={item.id}
+                    onClick={() => {
+                      toggleFavorite(item);
+                    }}
+                  >
+                    <img className="h-[20px]" src={close} />
+                  </Button>
                 </div>
               );
             })

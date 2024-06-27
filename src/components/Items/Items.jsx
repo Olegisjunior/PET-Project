@@ -1,7 +1,18 @@
+import { useContext } from "react";
 import Button from "../interface/Buttons/Button";
+import { Link } from "react-router-dom";
+import like from "../ui/heart_fill.png";
+import unlike from "../ui/heart_nofill.png";
+import { FavoritesContext } from "../pages/App";
 
 export const Items = (props) => {
-  const { name, img, price } = props;
+  const { name, img, price, id, product } = props;
+  const { favorites, toggleFavorite } = useContext(FavoritesContext);
+
+  const handleClick = () => {
+    toggleFavorite(product);
+  };
+  const isFavorite = favorites.some((fav) => fav.id === product.id);
 
   return (
     <div className="w-[325px] h-[200px] hover:shadow-[0_60px_30px_rgb(0,0,0,0.15)]">
@@ -12,20 +23,37 @@ export const Items = (props) => {
         >
           NEW
         </a>
-        <div>
-          <Button tailwind={"mr-5"}>{`<3`}</Button>
+        <div className="flex gap-3">
+          <button
+            className={"h-[2rem] justify-center items-center"}
+            onClick={handleClick}
+          >
+            {isFavorite ? (
+              <img
+                className="h-[17px] justify-center items-center"
+                src={like}
+              />
+            ) : (
+              <img
+                className="h-[17px] justify-center items-center"
+                src={unlike}
+              />
+            )}
+          </button>
+
           <Button hoverUnd={true}>compare</Button>
         </div>
       </div>
-      <a className="hover:cursor-pointer">
+      <Link key={id} to={`/Mountainbikes/${id}`}>
         <img
           src={img}
           className="max-w-full min-h-full object-cover"
           alt="bike"
         />
-      </a>
-      <a className="justify-center hover:cursor-pointer flex wrap">{name}</a>
-      <a className="justify-center flex hover:cursor-pointer ">{`${price}$`}</a>
+
+        <a className="justify-center hover:cursor-pointer flex wrap">{name}</a>
+        <a className="justify-center flex hover:cursor-pointer ">{`${price}$`}</a>
+      </Link>
     </div>
   );
 };

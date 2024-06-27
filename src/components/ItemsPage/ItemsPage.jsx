@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Button from "../interface/Buttons/Button";
-import like from "../ui/heart_fill.png";
-import unlike from "../ui/heart_nofill.png";
+
 import Truck from "../ui/truck.svg";
 import Shield from "../ui/shield.svg";
 import Compare from "../ui/comapre.svg";
@@ -11,6 +10,8 @@ import Compare from "../ui/comapre.svg";
 import "./img.scss";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+import { LikeButton } from "../LikeButton/LikeButton";
+import { FavoritesContext } from "../pages/App";
 
 // Item Page with description photos buy button ,
 
@@ -22,26 +23,20 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 // variable colors on bikes... yes  (в gpt є розписано що треба додати і поміняти!) p.s. Треба мапити кольори а не створювати 2 самостійно!!
 
-// feature favorite <3 to cart favorite... 50/50
+// feature favorite <3 to cart favorite... yes
 
 // feature favorite compare to window compare... no
 
 // New filters(year, size), rate for sort rate... no
 
-// IDK чи треба, воно нічого не оптимузовує, upload photos to web service, not for local db... no
+// jeskiy refactoring
 
-export const ItemsPage = ({ onAddToFavorites }) => {
+export const ItemsPage = ({ handleColor }) => {
   const [product, setProduct] = useState(null);
-  const [isActive, setIsActive] = useState(false);
-  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedColor, setSelectedColor] = useState();
   const [images, setImages] = useState([]);
-
+  const { favorites, toggleFavorite } = useContext(FavoritesContext);
   const { id } = useParams();
-
-  const handleClick = () => {
-    setIsActive((prevState) => !prevState);
-    onAddToFavorites(product);
-  };
 
   const getItem = async () => {
     try {
@@ -49,6 +44,7 @@ export const ItemsPage = ({ onAddToFavorites }) => {
         `https://9062e60b1552f6a8.mokky.dev/bikes/${id}`
       );
       setProduct(response.data);
+      setSelectedColor(response.data.colors[0]);
     } catch (e) {
       console.error(e.message);
     }
@@ -93,14 +89,6 @@ export const ItemsPage = ({ onAddToFavorites }) => {
     setImages(newImages);
   }, [product, selectedColor]);
 
-  const itemColors = [];
-
-  {
-    product && product.colors
-      ? product.colors.map((item) => itemColors.push(item))
-      : null;
-  }
-
   return (
     <>
       {product && (
@@ -128,7 +116,7 @@ export const ItemsPage = ({ onAddToFavorites }) => {
               <div className="text-center text-gray-700 flex flex-col justify-center items-center pl-[10rem] pr-[10rem] mb-5 mt-5">
                 {product.description}
                 <div className="mt-5 flex gap-10">
-                  {itemColors.map((item, index) => {
+                  {product.colors.map((item, index) => {
                     return (
                       <button
                         onClick={() => setSelectedColor(item)}
@@ -266,22 +254,13 @@ export const ItemsPage = ({ onAddToFavorites }) => {
                   </label>
                 </div>
                 <div className="flex flex-col gap-10 justify-center items-center ">
-                  <button
-                    className={"h-[2rem] justify-center items-center"}
-                    onClick={handleClick}
-                  >
-                    {isActive ? (
-                      <img
-                        className="h-[20px] justify-center items-center"
-                        src={like}
-                      />
-                    ) : (
-                      <img
-                        className="h-[20px] justify-center items-center"
-                        src={unlike}
-                      />
-                    )}
-                  </button>
+                  <LikeButton
+                    toggleFavorite={toggleFavorite}
+                    favorites={favorites}
+                    handleColor={handleColor}
+                    product={product}
+                    selectedColor={selectedColor}
+                  />
                   <Button
                     tailwind={
                       " w-[200px] h-[2rem] font-semibold hover:font-bold drop-shadow-lg text-[1.25rem] justify-center items-center"
