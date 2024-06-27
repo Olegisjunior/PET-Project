@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import Button from "../interface/Buttons/Button";
+import { Link } from "react-router-dom";
 
 export const SwiperSection = () => {
   return (
@@ -28,10 +29,20 @@ export const SwiperSection = () => {
       >
         <SwiperSlide className="relative">
           <Button tailwind="absolute text-[#ffffffcc] text-[8rem] font-[800] left-[535px] top-[283px] hover:text-[#fff] hover:pointer">
-            MTB
+            <Link
+              className=" text-[8rem] font-[800] hover:text-[#fff] hover:pointer"
+              to="/Mountainbikes"
+            >
+              MTB
+            </Link>
           </Button>
           <Button tailwind="absolute text-[#ffffffcc] text-[4rem] font-[600] left-[500px] top-[420px] hover:text-[#fff] hover:pointer">
-            description
+            <Link
+              className=" text-[4rem] font-[600] hover:text-[#fff] hover:pointer"
+              to="/Mountainbikes"
+            >
+              description
+            </Link>
           </Button>
           <img src={mtb} alt="" className="w-full" />
         </SwiperSlide>
