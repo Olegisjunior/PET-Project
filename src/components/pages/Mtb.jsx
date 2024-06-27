@@ -79,22 +79,7 @@ export default function Mtb() {
     setCurrentPage(pageNumber);
   };
 
-  // const SortedBikes = (data) => {
-  //
-
-  //   if (sortType === "sortByAlpha") {
-  //     return filteredBikes.sort((a, b) => a.name.localeCompare(b.name));
-  //   } else if (sortType === "sortByPrice") {
-  //     return filteredBikes.sort((a, b) => {
-  //       return a.price - b.price;
-  //     });
-  //   } else {
-  //     return filteredBikes;
-  //   }
-  // };
-
   const handleCategory = (categoryFilter) => {
-    // setFilter(categoryFilter);
     setFilter((prevFilter) => {
       if (prevFilter.includes(categoryFilter)) {
         return prevFilter.filter((brand) => brand !== categoryFilter);
@@ -108,7 +93,6 @@ export default function Mtb() {
 
   return (
     <>
-      {/* <Header /> */}
       <div className="main h-fit">
         <div className="title w-full h-[250px] relative">
           <h1 className="font-[800] text-[4rem] text-white absolute left-[35%] top-[20%]">
@@ -146,18 +130,7 @@ export default function Mtb() {
             handlePagination={handlePagination}
           ></Pagination>
         </div>
-
-        {/* <div className="mt-[5rem]">
-          <FooterSection />
-        </div> */}
       </div>
     </>
-    // json with img & price & name, title, grid's, card item, резиновий грід
-    // sort on top, pagination,
-    // skeleton when loading
-    // filters for grids, add active Button filter, add one two more active buttons...
-    // transport free data base or partner db
-
-    ////////////////////////////////////////////////////////////////////////////////////////////
   );
 }
