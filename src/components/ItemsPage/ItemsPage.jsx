@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Button from "../interface/Buttons/Button";
 
@@ -12,6 +12,7 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { LikeButton } from "../LikeButton/LikeButton";
 import { FavoritesContext } from "../pages/App";
+import { CompareContext } from "../pages/App";
 
 // Item Page with description photos buy button ,
 
@@ -25,7 +26,7 @@ import { FavoritesContext } from "../pages/App";
 
 // feature favorite <3 to cart favorite... yes
 
-// feature favorite compare to window compare... no
+// feature favorite compare to window compare... yes (but without design)
 
 // New filters(year, size), rate for sort rate... no
 
@@ -36,6 +37,7 @@ export const ItemsPage = ({ handleColor }) => {
   const [selectedColor, setSelectedColor] = useState();
   const [images, setImages] = useState([]);
   const { favorites, toggleFavorite } = useContext(FavoritesContext);
+  const { compares, toggleCompare } = useContext(CompareContext);
   const { id } = useParams();
 
   const getItem = async () => {
@@ -88,6 +90,11 @@ export const ItemsPage = ({ handleColor }) => {
     const newImages = getImageByColor(selectedColor);
     setImages(newImages);
   }, [product, selectedColor]);
+
+  const AddToCompare = () => {
+    toggleCompare(product);
+    alert("Product added to compare!");
+  };
 
   return (
     <>
@@ -262,8 +269,9 @@ export const ItemsPage = ({ handleColor }) => {
                     selectedColor={selectedColor}
                   />
                   <Button
+                    onClick={AddToCompare}
                     tailwind={
-                      " w-[200px] h-[2rem] font-semibold hover:font-bold drop-shadow-lg text-[1.25rem] justify-center items-center"
+                      "w-[200px] h-[2rem] font-semibold hover:font-bold drop-shadow-lg text-[1.25rem] justify-center items-center"
                     }
                   >
                     <div className="flex items-center justify-center items-center">
