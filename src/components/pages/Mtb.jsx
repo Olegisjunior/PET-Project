@@ -1,5 +1,3 @@
-import { FooterSection } from "../FooterSection/FooterSection";
-import { Header } from "../Header/Header";
 import { ItemList } from "../itemList/ItemList";
 import bannerMTB from "../ui/image1400w.jpeg";
 import Button from "../interface/Buttons/Button";
@@ -14,6 +12,8 @@ export default function Mtb() {
   const [CurrentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [filter, setFilter] = useState([]);
+  const [filter2, setFilter2] = useState([]);
+  const [filter3, setFilter3] = useState([]);
   const [dataAxios, setDataAxios] = useState({});
   const [sortValue, setSortValue] = useState("");
   const [sortPrice, setSortPrice] = useState("");
@@ -35,6 +35,12 @@ export default function Mtb() {
 
     if (filter && filter.length > 0) {
       params.brand = filter;
+    }
+    if (filter2 && filter2.length > 0) {
+      params.size = filter2;
+    }
+    if (filter3 && filter3.length > 0) {
+      params.year = filter3;
     }
 
     try {
@@ -58,8 +64,8 @@ export default function Mtb() {
   }
 
   useEffect(() => {
-    getBikes(sortValue, sortPrice, filter);
-  }, [CurrentPage, sortValue, sortPrice, filter]);
+    getBikes(sortValue, sortPrice, filter, filter2, filter3);
+  }, [CurrentPage, sortValue, sortPrice, filter, filter2, filter3]);
 
   const handleSort = (type) => {
     if (type === "sortByAlpha") {
@@ -91,6 +97,27 @@ export default function Mtb() {
     setCurrentPage(1);
   };
 
+  const handleSize = (sizeFilter) => {
+    setFilter2((prevFilter) => {
+      if (prevFilter.includes(sizeFilter)) {
+        return prevFilter.filter((size) => size !== sizeFilter);
+      } else {
+        return [...prevFilter, sizeFilter];
+      }
+    });
+    setCurrentPage(1);
+  };
+  const handleYear = (YearFilter) => {
+    setFilter3((prevFilter) => {
+      if (prevFilter.includes(YearFilter)) {
+        return prevFilter.filter((year) => year !== YearFilter);
+      } else {
+        return [...prevFilter, YearFilter];
+      }
+    });
+    setCurrentPage(1);
+  };
+
   return (
     <>
       <div className="main h-fit">
@@ -98,11 +125,7 @@ export default function Mtb() {
           <h1 className="font-[800] text-[4rem] text-white absolute left-[35%] top-[20%]">
             Moutain bikes
           </h1>
-          <img
-            src={bannerMTB}
-            className="w-full h-[250px] object-cover"
-            alt=""
-          />
+          <img src={bannerMTB} className="w-full h-[250px] object-cover" />
         </div>
       </div>
       <div className="sort bg-gray-200 w-[100%] flex flex-row justify-center items-center gap-12">
@@ -117,7 +140,11 @@ export default function Mtb() {
       <div className="flex flex-col justify-between">
         <div className="flex pb-[5rem]">
           <aside className="aside w-[14rem] h-fit bg-gray-200 flex flex-col">
-            <Filters Category={handleCategory}></Filters>
+            <Filters
+              Category={handleCategory}
+              Sizes={handleSize}
+              Years={handleYear}
+            ></Filters>
           </aside>
           {isLoading ? <Skeleton /> : null}
 
