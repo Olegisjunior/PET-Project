@@ -15,6 +15,7 @@ export const LikeButton = ({
     if (selectedColor !== 0) {
       handleColor(selectedColor);
     }
+    console.log(selectedColor);
   };
 
   return (
