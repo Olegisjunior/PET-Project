@@ -13,12 +13,12 @@ export const VideoBanners = () => {
             autoPlay
             loop
             muted
-            className="w-full h-[400px] object-cover opacity-[.80] contrast-150"
+            className="w-full h-[400px] object-cover saturate-[1.3] brightness-[.75] contrast-[1.4]"
           />
-          <Button tailwind="absolute text-white text-[4.5rem] left-[20%] top-[30%] rounded-lg font-[800]	w-[50rem] h-[10rem] bg-[##00000000] hover:text-[5rem] ">
+          <Button tailwind="absolute text-white text-[4.5rem] left-[25%] top-[30%] rounded-lg font-[800]	w-[50rem] h-[10rem] bg-[##00000000]  ">
             <Link
-              className="text-white text-[4.5rem] font-[800] hover:text-[5rem]"
-              to=""
+              className="text-white text-[4.5rem] font-[800]"
+              to="/Roadbikes"
             >
               Go to road bikes
             </Link>
@@ -32,11 +32,11 @@ export const VideoBanners = () => {
             autoPlay
             loop
             muted
-            className="w-full h-[400px] object-cover"
+            className="w-full h-[400px] object-cover saturate-[1.1] contrast-[1.25]"
           ></video>
-          <Button tailwind="absolute text-white text-[4.5rem] left-[20%] top-[30%] rounded-lg font-[800]	w-[50rem] h-[10rem] bg-[##00000000] hover:text-[5rem]">
+          <Button tailwind="absolute text-white text-[4.5rem] left-[25%] top-[30%] rounded-lg font-[800]	w-[50rem] h-[10rem] bg-[##00000000] ">
             <Link
-              className="text-white text-[4.5rem] font-[800] hover:text-[5rem]"
+              className="text-white text-[4.5rem] font-[800] "
               to="/Mountainbikes"
             >
               Go to downhill bikes
