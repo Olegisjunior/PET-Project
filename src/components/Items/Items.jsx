@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import like from "../ui/heart_fill.png";
 import unlike from "../ui/heart_nofill.png";
 import { FavoritesContext } from "../pages/App";
+import compare from "../ui/compare.png";
+import ButtonToCompare from "../ItemsPage/ButtonToCompare";
 
 export const Items = (props) => {
   const { name, img, price, id, product } = props;
@@ -41,7 +43,9 @@ export const Items = (props) => {
             )}
           </button>
 
-          <Button hoverUnd={true}>compare</Button>
+          <ButtonToCompare product={product}>
+            <img className="h-[20px] mr-2" src={compare} />
+          </ButtonToCompare>
         </div>
       </div>
       <Link key={id} to={`/Mountainbikes/${id}`}>

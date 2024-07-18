@@ -18,84 +18,48 @@ export const FooterSection = () => {
             </Link>
             <Link
               className="hover:underline focus:outline-none hover:pointer"
-              to=""
+              to="/Roadbikes"
             >
               Road bikes
             </Link>
             <Link
               className="hover:underline focus:outline-none hover:pointer"
-              to=""
+              to="/Ebikes"
             >
               Electra bikes
             </Link>
             <Link
               className="hover:underline focus:outline-none hover:pointer"
-              to=""
+              to="/Kidsbikes"
             >
-              Hybrid bikes
+              Kids bikes
             </Link>
             <Link
               className="hover:underline focus:outline-none hover:pointer"
-              to=""
+              to="Urbanbikes"
             >
-              Men's bikes
+              Urban bikes
             </Link>
             <Link
               className="hover:underline focus:outline-none hover:pointer"
-              to=""
-            >
-              Women's bikes
-            </Link>
-            <Link
-              className="hover:underline focus:outline-none hover:pointer"
-              to=""
+              to="/Accessories"
             >
               Equipment
-            </Link>
-            <Link
-              className="hover:underline focus:outline-none hover:pointer"
-              to=""
-            >
-              Clothing
-            </Link>
-            <Link
-              className="hover:underline focus:outline-none hover:pointer"
-              to=""
-            >
-              Cloth
             </Link>
           </div>
           <div className="second flex justify-center items-center flex-col text-[#dadddb]">
             <h1 className="text-[1.25rem] text-[#ffffff]">ABOUT US</h1>
             <Link
               className="hover:underline focus:outline-none hover:pointer"
-              to=""
+              to="AboutUs"
             >
               Our history
             </Link>
             <Link
               className="hover:underline focus:outline-none hover:pointer"
-              to=""
+              to="AboutUs"
             >
-              our missions
-            </Link>
-            <Link
-              className="hover:underline focus:outline-none hover:pointer"
-              to=""
-            >
-              our principles
-            </Link>
-            <Link
-              className="hover:underline focus:outline-none hover:pointer"
-              to=""
-            >
-              Technology
-            </Link>
-            <Link
-              className="hover:underline focus:outline-none hover:pointer"
-              to=""
-            >
-              Stores
+              Our missions
             </Link>
           </div>
           <div className="third flex justify-center items-center flex-col text-[#dadddb]">
@@ -111,24 +75,6 @@ export const FooterSection = () => {
               to=""
             >
               Product support
-            </Link>
-            <Link
-              className="hover:underline focus:outline-none hover:pointer"
-              to=""
-            >
-              Bike registration
-            </Link>
-            <Link
-              className="hover:underline focus:outline-none hover:pointer"
-              to=""
-            >
-              Bike archive
-            </Link>
-            <Link
-              className="hover:underline focus:outline-none hover:pointer"
-              to=""
-            >
-              Manuals & user guides
             </Link>
           </div>
         </div>

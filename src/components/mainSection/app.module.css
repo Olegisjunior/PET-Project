@@ -1,13 +1,14 @@
 .race,
 .dh {
   object-fit: cover;
-  width: 1000px;
+  width: 100%;
   z-index: 1;
-  height: 600px;
+  height: 900px;
 }
 .dh {
   transform: scaleX(-1);
 }
+
 
 .dh:hover,
 .race:hover {
