@@ -1,0 +1,5 @@
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail-image.focus {
+  border: 3px solid #1e1e1e !important;
+  transform: scale(1.05) !important;
+}/*# sourceMappingURL=img.css.map */

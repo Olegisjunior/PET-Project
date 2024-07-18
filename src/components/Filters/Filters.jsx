@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../interface/Buttons/Button";
 
 export const Filters = ({ Category, Sizes, Years }) => {
-  const [isListOpen, setListOpen] = useState(false);
+  const [isListOpen, setListOpen] = useState(true);
   const [isListOpen2, setListOpen2] = useState(false);
   const [isListOpen3, setListOpen3] = useState(false);
   const [isActive, setIsActive] = useState({});
@@ -63,7 +63,7 @@ export const Filters = ({ Category, Sizes, Years }) => {
           isListOpen ? "flex flex-col justify-center items-center " : "hidden "
         }
       >
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex pb-2 ">
           <Button
             tailwind={
               isActive["Merida"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`
@@ -74,7 +74,7 @@ export const Filters = ({ Category, Sizes, Years }) => {
             Merida
           </Button>
         </li>
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex  pb-2">
           <Button
             tailwind={
               isActive["Trek"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`
@@ -85,7 +85,18 @@ export const Filters = ({ Category, Sizes, Years }) => {
             Trek
           </Button>
         </li>
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex  pb-2">
+          <Button
+            tailwind={
+              isActive["Giant"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`
+            }
+            onClick={() => handlerButton("Giant")}
+            hoverUnd={true}
+          >
+            Giant
+          </Button>
+        </li>
+        <li className="pt-2 pl-3 pr-3 flex pb-2 ">
           <Button
             tailwind={
               isActive["Specialized"]
@@ -111,7 +122,7 @@ export const Filters = ({ Category, Sizes, Years }) => {
           isListOpen2 ? "flex flex-col justify-center items-center" : "hidden "
         }
       >
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex pb-2">
           <Button
             tailwind={
               isActive2["s"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`
@@ -122,7 +133,7 @@ export const Filters = ({ Category, Sizes, Years }) => {
             S
           </Button>
         </li>
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex pb-2">
           <Button
             tailwind={
               isActive2["m"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`
@@ -133,7 +144,7 @@ export const Filters = ({ Category, Sizes, Years }) => {
             M
           </Button>
         </li>
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex pb-2">
           <Button
             tailwind={
               isActive2["l"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`
@@ -144,7 +155,7 @@ export const Filters = ({ Category, Sizes, Years }) => {
             L
           </Button>
         </li>
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex pb-2">
           <Button
             tailwind={
               isActive2["xl"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`
@@ -155,7 +166,7 @@ export const Filters = ({ Category, Sizes, Years }) => {
             XL
           </Button>
         </li>
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex pb-2">
           <Button
             tailwind={
               isActive2["xxl"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`
@@ -179,7 +190,7 @@ export const Filters = ({ Category, Sizes, Years }) => {
           isListOpen3 ? "flex flex-col justify-center items-center " : "hidden "
         }
       >
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex pb-2">
           <Button
             tailwind={
               isActive3["2024"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`
@@ -190,7 +201,7 @@ export const Filters = ({ Category, Sizes, Years }) => {
             2024
           </Button>
         </li>
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex pb-2">
           <Button
             tailwind={
               isActive3["2023"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`
@@ -201,7 +212,7 @@ export const Filters = ({ Category, Sizes, Years }) => {
             2023
           </Button>
         </li>
-        <li className="pt-2 pl-3 pr-3 flex ">
+        <li className="pt-2 pl-3 pr-3 flex pb-2">
           <Button
             tailwind={
               isActive3["2022"] ? `rounded bg-gray-300 pl-5 pr-5` : `pl-5 pr-5`

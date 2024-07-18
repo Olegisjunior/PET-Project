@@ -1,11 +1,12 @@
 import { ItemList } from "../itemList/ItemList";
-import bannerMTB from "../ui/image1400w.jpeg";
+import bannerMTB from "../ui/image1400w.jpg";
 import Button from "../interface/Buttons/Button";
 import Pagination from "../Pagination/Pagination";
 import { useEffect, useState } from "react";
 import Skeleton from "../Skeleton/Skeleton";
 import Filters from "../Filters/Filters";
 import axios from "axios";
+import Alert from "../Header/Alert";
 
 export default function Mtb() {
   const [product, setProduct] = useState([]);
@@ -149,6 +150,7 @@ export default function Mtb() {
           {isLoading ? <Skeleton /> : null}
 
           {!isLoading ? <ItemList bikes={product} /> : null}
+          {/* <Alert type={"error"}>Error</Alert> */}
         </div>
 
         <div className="p-10">
